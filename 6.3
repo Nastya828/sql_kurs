@@ -14,7 +14,7 @@ GROUP BY ContactType;
 
 6.3.2.
 SELECT CategoryiD, 
-	AVG(UnitPrice) 
+	AVG(UnitPrice)  as UnitPrice
 FROM Products
 GROUP BY CategoryID
-ORDER BY CategoryID;
+ORDER BY UnitPrice;

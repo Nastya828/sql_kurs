@@ -1,0 +1,4 @@
+16.
+Добавим полю описание территории индекс, для быстрой выборки подходящего поля:
+
+CREATE INDEX idxTerritory ON Territories (TerritoryDescription).

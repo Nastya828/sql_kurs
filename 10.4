@@ -1,0 +1,31 @@
+9.4.2.
+В предложении SELECT лишние поля  t1.CustomerID, t2.ContactName,
+под условием FROM лишняя таблица  Customers t2. Отсюда в условии WHERE 
+лишняя проверка на NULL поля Region таблицы Customers.
+
+
+10.4. Задания
+
+10.4.1.
+SELECT Products.ProductName, [Order Details].UnitPrice
+FROM Products
+JOIN [Order Details]
+ON Products.ProductID = [Order Details].ProductID 
+AND [Order Details].UnitPrice < 20
+
+10.4.2.
+При использовании FULL JOIN добавились 2 записи со значениями 
+NULL в поле Freight, т.к. эти записи присутсвуют только в таблице Customers.
+
+10.4.3.
+SELECT Orders.Freight, Customers.CompanyName
+FROM Orders 
+CROSS JOIN Customers
+WHERE Orders.CustomerID = Customers.CustomerID
+ORDER BY Freight;
+
+10.4.4.
+SELECT Products.ProductName, [Order Details].UnitPrice
+FROM Products 
+JOIN [Order Details]
+ON Products.ProductID = [Order Details].ProductID;

@@ -1,0 +1,14 @@
+10.4.3.
+Не написано как в общем случае(с помощью первичного и вторичного ключей)
+превратить CROSS JOIN в INNER JOIN.
+
+11.5.1
+SELECT Customers.CompanyName, Orders.OrderID FROM Customers
+LEFT JOIN Orders ON Orders.CustomerID IS NULL;
+
+11.5.2
+SELECT 'Customer' As Type, ContactName, City, Country, ContactTitle 
+FROM Customers
+UNION
+SELECT 'Supplier' As Type, ContactName, City, Country, ContactTitle 
+FROM Suppliers;

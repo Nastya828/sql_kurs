@@ -1,0 +1,32 @@
+14.3. 
+Не указано, что представление показывает когда и какому 
+клиенту оформлен заказ.
+
+14.4.
+Неправильно определено условие отбора.
+Не средняя цена отобрана, а выше среднего.
+
+
+15.7
+CREATE TABLE Region ( 
+    RegionID int NOT NULL  PRIMARY KEY, 
+    RegionDescription nchar(50) NOT NULL );
+
+INSERT INTO Region (RegionID, RegionDescription)
+VALUES   ( 1, 'Western'),
+	   (2, 'North'),
+	   ( 3, 'East');
+
+
+CREATE TABLE Territories ( 
+    TerritoryID  nvarchar(20) NOT NULL PRIMARY KEY,
+    TerritoryDescription nchar(50) NOT NULL,
+	RegionID int NOT NULL FOREIGN KEY REFERENCES Region(RegionID)); 
+
+INSERT INTO Territories (TerritoryID, TerritoryDescription, RegionID)
+VALUES   ('4567' , 'BC', 1),
+	   ('4568' , 'Ontario', 2),
+	   ('4569' , 'Saskatoon', 1);
+
+
+
